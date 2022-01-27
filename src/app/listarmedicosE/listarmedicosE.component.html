@@ -1,0 +1,56 @@
+
+<div class="container">
+    <div>
+         <form [formGroup]="formDoctores" (ngSubmit)="searchDoctorsEspe()">
+              <div class="input-group mb-3">
+                   <label class="input-group-text" for="especialidad">Doctores</label>
+                   <input formControlName="especialidad" type="text" class="form-control" id="especialidad" name="especialidad" placeholder="Especialidad ">
+                   
+                   
+                   <button class="btn btn-info">Buscar Doctores por especialidad</button>
+                   <span style="color:red" *ngIf="formDoctores.controls['especialidad'].hasError('required') ">Ingresar Especialidad</span>
+                   <span style="color:red" *ngIf="formDoctores.controls['especialidad'].hasError('pattern') ">Ingresar solo Letras</span>
+
+               </div>
+              <div style="margin-left: 50px; margin-block-start: 20px; margin-right:150px;">
+                   <table class="table table-bordered border-primary">
+                       <thead class="table-light">
+                           <th>
+                             <p class="h3">Nombres</p>
+                           </th>
+                           <th>
+                             <p class="h3">Apellidos</p>
+                           </th>
+                           <th>
+                              <p class="h3">Correo</p>
+                            </th>
+                            <th>
+                              <p class="h3">hora</p>
+                            </th>
+                            
+                             
+                       </thead>
+                       <tbody>
+                        <tr *ngFor="let res of doctors">
+                             <td>
+                                  <p class="h5">{{res.nombres}}</p>
+                             </td>
+                             <td>
+                                  <p class="h5">{{res.apellidos}}</p>
+                             </td>
+                             <td>
+                              <p class="h5">{{res.correo}}</p>
+                               </td>
+                             <td>
+                                  <p class="h5">{{res.hour}}</p>
+                             </td>
+                        </tr>
+
+                       </tbody>
+                   </table>
+               </div>
+         </form>
+    </div>
+
+</div>
+
