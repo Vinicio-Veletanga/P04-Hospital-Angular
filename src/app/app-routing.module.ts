@@ -7,7 +7,7 @@ import { LoginComponent } from './vista/login/login.component';
 import { NuevoComponent } from './vista/nuevo/nuevo.component';
 
 const routes: Routes = [
-  { path: '' , redirectTo : 'login' , pathMatch : 'full' },
+  { path: '' , redirectTo : 'dashboard' , pathMatch : 'full' },
   { path: 'login' , component : LoginComponent },
 
   { path: 'listarmedicosE', component: ListarMedicosEspecialidad},

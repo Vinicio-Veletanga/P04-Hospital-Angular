@@ -1,4 +1,4 @@
-export interface ResponseI{
-    status: string;
-    response:string;
+export class ResponseI{
+    status!: string;
+    result:any;
 }

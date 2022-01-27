@@ -14,8 +14,8 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-  loginByEmail(form:LoginI):Observable<ResponseI>{
-    let direccion = this.url;
-    return this.http.post<ResponseI>(direccion, form);
-  }
+  
+  loginByEmail(){}
+  
+  
 }
