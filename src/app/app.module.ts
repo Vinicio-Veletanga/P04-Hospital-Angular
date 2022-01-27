@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './plantillas/header/header.component';
 import { FooterComponent } from './plantillas/footer/footer.component';
 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'
+import { ReactiveFormsModule,FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http' 
+import { ListarMedicosEspecialidad } from './listarmedicosE/listarmedicosE.component';
+import { ListarMedicosE } from './services/api/listarmedicosE.service';
 //import { LoginComponent } from './vista/login/login.component';
 //import { DashboardComponent } from './vista/dashboard/dashboard.component';
 //import { NuevoComponent } from './vista/nuevo/nuevo.component';
@@ -18,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    routingComponents
+    routingComponents, 
+    ListarMedicosEspecialidad
     //LoginComponent,
     //DashboardComponent,
     //NuevoComponent,
@@ -26,12 +29,11 @@ import { HttpClientModule } from '@angular/common/http'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule, 
-    FormsModule,
-    HttpClientModule
+    AppRoutingModule,  
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ListarMedicosE],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
